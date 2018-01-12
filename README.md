@@ -1,3 +1,14 @@
+# 記録
+
++ チューニングに伴う設定変更
+    + [setting](/markdown/setting.md)
++ チューニング用SQL作成
+    + [use_sql](/markdown/use_sql.md)
++ チューニング
+    + [tuning](/markdown/tuning.md)
+
+***
+
 # チームラボ選考課題
 
 このリポジトリで動作するサンプルアプリケーションのキーワード検索機能を、  
