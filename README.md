@@ -1,10 +1,10 @@
-# 記録
+# 記録
 
 + チューニングに伴う設定変更
     + [setting](/markdown/setting.md)
 + チューニング用SQL作成
     + [use_sql](/markdown/use_sql.md)
-+ チューニング
++ チューニング
     + [tuning](/markdown/tuning.md)
 
 ***

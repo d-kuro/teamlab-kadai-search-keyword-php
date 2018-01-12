@@ -139,7 +139,7 @@ default-character-set=utf8
 $ docker restart 4abc05327f15
 ```
 
-再度確認する
+再度確認する
 
 ```sql
 mysql> show variables like "chara%";
