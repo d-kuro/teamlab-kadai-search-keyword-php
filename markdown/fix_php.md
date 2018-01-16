@@ -1,19 +1,11 @@
-<?php
+# PHPファイルの変更
 
-namespace App\Libs;
+## SQLの取り込み
 
-use DB;
+作成したSQLを実行するように`PageUtility.php`を改修
 
-class PageUtility
-{
-    /**
-     * 検索
-     *
-     * @param $keyword
-     * @return array
-     */
-    public static function findUserViewedPage($keyword){
-        $result = DB::select(
+```php
+$result = DB::select(
             'SELECT  activity.user_id AS user_id,
                      user.name AS user_name,
                      activity.page_id AS page_id,
@@ -29,10 +21,13 @@ class PageUtility
                      page.title
             ORDER BY activity.user_id ASC,
                      activity.page_id ASC', ["$keyword%"]);
+```
 
-        // JSONにして配列に戻すことでviewの変更が不要になる
-        $userPageArray = json_decode(json_encode($result), true);
+## Viewに返すために配列形式に変換
 
-        return $userPageArray;
-    }
-}
+`stdClass`を`Array`に変換する  
+配列形式に変換することでViewの変更が不要になるため
+
+```php
+$userPageArray = json_decode(json_encode($result), true);
+```
