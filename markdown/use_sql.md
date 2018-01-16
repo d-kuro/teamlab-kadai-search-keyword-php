@@ -51,24 +51,23 @@
 
 ## SQL
 
-キーワード指定なしを想定  
-チューニング用のため`LIMIT`には1000を設定
+キーワード指定なしを想定
 
 ```sql
-SELECT   user.id as user_id,
-         page.id as page_id,
+SELECT   user.id AS user_id,
+         user.name,
+         page.id AS page_id,
          page.title,
-         count(*) as count
-FROM     page
-JOIN     activity on page.id = activity.page_id
-JOIN     user on user.id = activity.user_id
+         count(*) AS count
+FROM     mydb.page
+JOIN     mydb.activity ON page.id = activity.page_id
+JOIN     mydb.user ON user.id = activity.user_id
 WHERE    page.title LIKE '%'
 GROUP BY user.id,
          page.id,
          page.title
 ORDER BY user.id ASC,
-         page.id ASC
-LIMIT    1000;
+         page.id ASC;
 ```
 
 ## 実行時間の測定
@@ -91,12 +90,12 @@ root@4abc05327f15:/tmp# vi query.sql
 ### timeコマンドを使用して計測
 
 ```bash
-root@4abc05327f15:/tmp# time (cat query.sql | mysql -u root -p mydb > /dev/null)
+$ time (cat temp.sql | mysql -u root -p mydb > /dev/null)
 Enter password: 
 
-real	0m5.584s
-user	0m0.000s
-sys	0m0.000s
+real	0m2.289s
+user	0m0.050s
+sys	0m0.020s
 ```
 
 `real`の値が実行時間
