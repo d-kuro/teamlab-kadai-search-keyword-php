@@ -1,4 +1,4 @@
-# 記録
+# index
 
 + チューニングに伴う設定変更
     + [setting](/markdown/setting.md)
@@ -8,6 +8,8 @@
     + [tuning](/markdown/tuning.md)
 + PHPファイルの改修
     + [fix_php](/markdown/fix_php.md)
++ 発生したバグについて
+    + [bug](/markdown/bug.md)
 
 ***
 
