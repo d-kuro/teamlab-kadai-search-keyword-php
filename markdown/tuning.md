@@ -188,6 +188,8 @@ Index_comment:
 3 rows in set (0.00 sec)
 ```
 
+この`ADD INDEX`文を`after.sql`に記載する
+
 ## 再度EXPLAINする
 
 ```sql
